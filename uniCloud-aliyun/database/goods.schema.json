@@ -1,0 +1,84 @@
+{
+  "bsonType": "object",
+  "required": ["title", "price", "userId", "category"],
+  "properties": {
+    "_id": {
+      "description": "商品ID，自动生成"
+    },
+    "title": {
+      "bsonType": "string",
+      "description": "商品标题",
+      "minLength": 2,
+      "maxLength": 30
+    },
+    "description": {
+      "bsonType": "string",
+      "description": "商品描述",
+      "maxLength": 500
+    },
+    "category": {
+      "bsonType": "string",
+      "description": "商品分类",
+      "enum": ["book", "digital", "daily", "clothes", "other"]
+    },
+    "price": {
+      "bsonType": "double",
+      "description": "现价",
+      "minimum": 0
+    },
+    "originalPrice": {
+      "bsonType": "double",
+      "description": "原价"
+    },
+    "images": {
+      "bsonType": "array",
+      "description": "图片URL列表"
+    },
+    "userId": {
+      "bsonType": "string",
+      "description": "发布者用户ID"
+    },
+    "userName": {
+      "bsonType": "string",
+      "description": "发布者用户名"
+    },
+    "userAvatar": {
+      "bsonType": "string",
+      "description": "发布者头像URL"
+    },
+    "location": {
+      "bsonType": "string",
+      "description": "交易地点（旧字段，现作为备注存储）"
+    },
+    "contact": {
+      "bsonType": "string",
+      "description": "联系方式"
+    },
+    "status": {
+      "bsonType": "string",
+      "description": "商品状态",
+      "enum": ["onSale", "sold", "offShelf"],
+      "defaultValue": "onSale"
+    },
+    "createTime": {
+      "bsonType": "timestamp",
+      "description": "创建时间",
+      "forceDefaultValue": {
+        "$env": "now"
+      }
+    },
+    "updateTime": {
+      "bsonType": "timestamp",
+      "description": "更新时间",
+      "forceDefaultValue": {
+        "$env": "now"
+      }
+    }
+  },
+  "permission": {
+    "read": true,
+    "create": "auth.uid != null",
+    "update": "auth.uid == doc.userId",
+    "delete": "auth.uid == doc.userId"
+  }
+}

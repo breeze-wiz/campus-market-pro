@@ -1,0 +1,40 @@
+	{
+	  "bsonType": "object",
+	  "required": ["username", "phone", "password"],
+	  "permission": {
+	    "read": "doc._id == auth.uid",
+	    "create": false, 
+	    "update": "doc._id == auth.uid",
+	    "delete": false
+	  },
+	  "properties": {
+	    "_id": {
+	      "description": "用户ID，系统自动生成"
+	    },
+	    "username": {
+	      "bsonType": "string",
+	      "description": "用户名",
+	      "title": "用户名",
+	      "minLength": 3
+	    },
+	    "password": {
+	      "bsonType": "string",
+	      "description": "密码",
+	      "title": "密码"
+	    },
+	    "phone": {
+	      "bsonType": "string",
+	      "description": "手机号",
+	      "title": "手机号",
+	      "pattern": "^1[3-9][0-9]{9}$"
+	    },
+	    "createTime": {
+	      "bsonType": "number",
+	      "description": "注册时间戳"
+	    },
+	    "lastLoginTime": {
+	      "bsonType": "number",
+	      "description": "最后登录时间戳"
+	    }
+	  }
+	}

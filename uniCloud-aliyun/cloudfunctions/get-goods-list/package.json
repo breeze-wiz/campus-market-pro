@@ -1,0 +1,7 @@
+{
+  "name": "get-goods-list",
+  "dependencies": {},
+  "extensions": {
+    "uni-cloud-jql": {}
+  }
+}

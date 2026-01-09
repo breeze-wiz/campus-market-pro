@@ -1,0 +1,17 @@
+{
+  "bsonType": "object",
+  "required": ["senderId", "receiverId", "content"],
+  "properties": {
+    "senderId": { "bsonType": "string" },
+    "receiverId": { "bsonType": "string" },
+    "goodsId": { "bsonType": "string" },
+    "content": { "bsonType": "string" },
+    "createTime": { "bsonType": "timestamp" }
+  },
+  "permission": {
+    "read": true,
+    "create": true,
+    "update": true,
+    "delete": true
+  }
+}

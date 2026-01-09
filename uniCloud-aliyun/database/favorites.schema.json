@@ -1,0 +1,16 @@
+{
+  "bsonType": "object",
+  "required": ["userId", "goodsId"],
+  "properties": {
+    "userId": { "bsonType": "string", "description": "用户ID" },
+    "goodsId": { "bsonType": "string", "description": "商品ID" },
+    "goodsData": { "bsonType": "object", "description": "商品快照" },
+    "createTime": { "bsonType": "timestamp" }
+  },
+  "permission": {
+    "read": true, 
+    "create": true,
+    "update": true,
+    "delete": true
+  }
+}
