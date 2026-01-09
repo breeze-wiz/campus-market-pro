@@ -1,0 +1,10 @@
+{
+  "name": "campus-market",
+  "version": "1.0.0",
+  "description": "校园闲置交易平台",
+  "main": "main.js",
+  "dependencies": {
+    "crypto-js": "^4.1.1",
+    "@dcloudio/uni-ui": "^1.4.20"
+  }
+}
